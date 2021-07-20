@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 95, 95, 0.664);
+    z-index: -100;
+    font-family: 'Baloo 2', cursive;
+}
+
+.canvas {
+    display: flex;
+    height: 88vh;
+    width: 92vw;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.267);
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    border-radius: 4px;
+    z-index: 1;
+    cursor: crosshair;
+    opacity: 0;
+}
+
+.show-canvas {
+    animation: anim-canvas 0.9s ease-in 0.6s 1 forwards;
+}
+
+@keyframes anim-canvas {
+    from {
+        display: none;
+        opacity: 0;
+    }
+    to {
+        display: flex;
+        opacity: 1;
+    }
+}
+
+#draw {
+    z-index: 1;
+}
+
+.btn {
+    height: 0px;
+    width: 170px;
+    display: block;
+    opacity: 1;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(rgb(134, 134, 134), white);
+    border-radius: 4px;
+    border: 0px;
+    border-left: 3px solid teal;
+    margin-top: 5px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+.show-btn {
+    animation: anim-btn 0.9s ease-in 0.6s 1 forwards;
+}
+
+@keyframes anim-btn {
+    from {
+        display: none;
+        opacity: 0;
+        height: 0px;
+        visibility: hidden;
+    }
+    to {
+        display: block;
+        opacity: 1;
+        height: 38px;
+        visibility: visible;
+    }
+}
+
+/* Overlay Screen css */
+
+.screen {
+    height: 100vh;
+    width: 100vw;
+    opacity: 1;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.screen-collapse {
+    animation: anim-screen 0.6s ease-in 1 forwards;
+}
+
+@keyframes anim-screen {
+    from {
+        opacity: 1;
+        z-index: 10;
+        height: 100vh;
+    }
+    to {
+        opacity: 0;
+        z-index: -10;
+        height: 0vh;
+    }
+}
+
+.screen .desc {
+    height: 470px;
+    width: 900px;
+    background: rgba(255, 255, 255, 0.267);
+    border-radius: 4px;
+    border-left: 4px solid teal;
+    padding: 60px;
+}
+
+.screen .screen-btn {
+    height: 36px;
+    width: 170px;
+    display: block;
+    outline: none;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(rgb(134, 134, 134), white);
+    border-radius: 4px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    border-left: 3px solid teal;
+}
+
+.screen .desc .foot {
+    height: 30px;
+    width: 100%;
+    background: hsl(180deg 23% 60%);
+    top: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 90px;
+}
